@@ -1,0 +1,83 @@
+export const platformDetails = {
+  device_id: "27",
+  device_name: "ASR9906",
+  version: "7.1.2",
+  up_time: "2 weeks 14 minutes",
+  platformDetails: [
+    {
+      node: "0/0/CPU0",
+      type: "NC55-36X100G",
+      state: "IOS XR RUN",
+      config_state: "NSHUT",
+    },
+    {
+      node: "0/1/CPU0",
+      type: "NC55-36X100G-S",
+      state: "IOS XR RUN",
+      config_state: "NSHUT",
+    },
+    {
+      node: "0/2/CPU0",
+      type: "NC55-36X100G",
+      state: "IOS XR RUN",
+      config_state: "NSHUT",
+    },
+    {
+      node: "0/3/CPU0",
+      type: "NC55-36X100G",
+      state: "IOS XR RUN",
+      config_state: "NSHUT",
+    },
+    {
+      node: "0/4/CPU0",
+      type: "NC55-36X100G",
+      state: "IOS XR RUN",
+      config_state: "NSHUT",
+    },
+    {
+      node: "0/RP0/CPU0",
+      type: "NC55-RP(Active)",
+      state: "IOS XR RUN",
+      config_state: "NSHUT",
+    },
+    {
+      node: "0/RP1/CPU0 ",
+      type: "NC55-RP(Standby)",
+      state: "IOS XR RUN",
+      config_state: "NSHUT",
+    },
+    { node: "0/2/NPU0", type: "Slice", state: "UP", config_state: "" },
+    { node: "0/2/NPU1", type: "Slice", state: "UP", config_state: "" },
+    { node: "0/2/NPU2", type: "Slice", state: "UP", config_state: "" },
+    {
+      node: "0/2/NPU2",
+      type: "Slice",
+      state: "Slice",
+      config_state: "",
+    },
+    {
+      node: "0/FC0",
+      type: "NC55-5508-FC",
+      state: "OPERATIONAL",
+      config_state: "NSHUT",
+    },
+    {
+      node: "0/FC1",
+      type: "NC55-5508-FC",
+      state: "OPERATIONAL",
+      config_state: "NSHUT",
+    },
+    {
+      node: "0/FC2",
+      type: "NC55-5508-FC",
+      state: "OPERATIONAL",
+      config_state: "NSHUT",
+    },
+    {
+      node: "0/FC3",
+      type: "NC55-5508-FC",
+      state: "OPERATIONAL",
+      config_state: "NSHUT",
+    },
+  ],
+};

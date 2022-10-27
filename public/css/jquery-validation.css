@@ -1,0 +1,5 @@
+form .validation_error {
+  color: #ff0000 !important;
+  font-weight: normal;
+  font-style: italic;
+}

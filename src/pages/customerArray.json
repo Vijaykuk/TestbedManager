@@ -1,0 +1,235 @@
+[{
+        "name":"Customer1",
+        "cvt_loacation":"",
+        "franchise":"customer1",
+        "releases":"732,752,741,735",
+        "headline":"Production Release – 712 (ASR9k, NCS5500, NCS5K), 731 (8000) ; Next Upgrade Release – 734 ; Upcoming EFT – 734 (4/1), 752 (3/31) ; Upcoming NPI – CX-8808(734), SR|EC-8202-32FH(752) ",
+        "platformDetails":{
+          "ASR9K":{"roles":"BX,BB","chassisList":"ASR9922,ASR9904","cardList":"12x100G,8x100G"},
+          "NCS5500":{"roles":"CX,PF,ME,EX,BX","chassisList":"55A1,5508,5501","cardList":"36x100G,18Hx18F"},
+          "NCS5K":{"roles":"","chassisList":"","cardList":""},
+          "_8000":{"roles":"","chassisList":"","cardList":""}
+        },
+        "roleDetails":{
+             "ASR9K":{
+               "BX":{
+                 "chassisList":"ASR9922,ASR9904"
+               },
+               "BB":{
+                 "chassisList":"ASR9922,ASR9904"
+               }
+             },
+             "NCS5500":{
+               "CX":{
+                 "chassisList":"55A1,5508,5501"
+               },
+               "PF":{
+                 "chassisList":"55A1,5508,5501"
+               },
+               "ME":{
+                 "chassisList":"55A1,5508,5501"
+               },
+               "EX":{
+                 "chassisList":"55A1,5508,5501"
+               }
+             }
+         },
+        "prodImages":{
+         "732":{
+             "ASR9K": {
+            "revs":"rev1,re2,rev3",
+            "status":"active"
+          },
+          "NCS5500": {
+            "revs":"rev1,re2,rev4,rev5",
+            "status":"active"
+          }
+           }
+        },
+        "smuDetails":{
+         "732":{
+             "ASR9K": {
+            "rev1":"CSC1234,CSC5678,CSC6739",
+            "rev2":"CSC1234,CSC5678,CSC6739",
+            "rev3":"CSC1234,CSC5678,CSC6739"
+          }
+           }
+        },
+        "cfdDetails":
+           "CSC1234,CSC5678,CSC6739,CSC1234,CSC5678,CSC6739,CSC1234,CSC5678,CSC6739",
+        "opticDetails":{
+            "ASR9K":{
+                "optics":"op1,op2,op3,op4"
+            },
+            "NCS5500":{
+                "optics":"op5,op6,op7,op8"
+            }
+
+        },
+        "featureDetails":{
+            "BGP":{
+                "ASR9K":{
+                    "roles":"BX,CX,EC"
+                },
+                "NCS5500":{
+                    "roles":"BX,CX,EC"
+                },
+                "_8000":{
+                    "roles":"BX,CX,EC"
+                }
+            },
+            "ISIS":{
+                "ASR9K":{
+                    "roles":"BX,CX,EC"
+                }
+            }
+
+        },
+        "team":[{
+            "name":"abc",
+            "cvt_loacation":"",
+            "role":"",
+            "org":"marketing",
+            "CVT_POC":"true",
+            "designation":"abc designation",
+            "esc_lead":"",
+            "eng_sponser":"",
+            "cvt_mgr":""
+            },
+            {
+              "name":"abc1",
+              "role":"",
+              "org":"CVT/AT",
+              "CVT_POC":"true",
+              "designation":"abc designation",
+              "esc_lead":"",
+              "eng_sponser":"",
+              "cvt_mgr":""
+              },
+              {
+                  "name":"abc2",
+                  "role":"",
+                  "org":"marketing",
+                  "CVT_POC":"true",
+                  "designation":"abc designation",
+                  "esc_lead":"",
+                  "eng_sponser":"",
+                  "cvt_mgr":""
+                  },
+                  {
+                    "name":"abc3",
+                    "role":"",
+                    "org":"cvt/at",
+                    "CVT_POC":"true",
+                    "designation":"abc designation",
+                    "esc_lead":"",
+                    "eng_sponser":"",
+                    "cvt_mgr":""
+                    }]
+    },
+{
+    "name":"Customer2",
+    "franchise":"customer2",
+    "releases":"732,752,741,735",
+    "headline":"Production Release – 712 (ASR9k, NCS5500, NCS5K), 731 (8000) ; Next Upgrade Release – 734 ; Upcoming EFT – 734 (4/1), 752 (3/31) ; Upcoming NPI – CX-8808(734), SR|EC-8202-32FH(752) ",
+    "platformDetails":{
+      "ASR9K":{"roles":"BX,BB","chassisList":"ASR9922,ASR9904","cardList":"12x100G,8x100G"},
+      "NCS5500":{"roles":"CX,PF,ME,EX,BX","chassisList":"55A1,5508,5501","cardList":"36x100G,18Hx18F"},
+      "NCS5K":{"roles":"","chassisList":"","cardList":""},
+      "_8000":{"roles":"","chassisList":"","cardList":""}
+    },
+    "roleDetails":{
+         "ASR9K":{
+           "BX":{
+             "chassisList":"ASR9922,ASR9904"
+           },
+           "BB":{
+             "chassisList":"ASR9922,ASR9904"
+           }
+         },
+         "NCS5500":{
+           "CX":{
+             "chassisList":"55A1,5508,5501"
+           },
+           "PF":{
+             "chassisList":"55A1,5508,5501"
+           },
+           "ME":{
+             "chassisList":"55A1,5508,5501"
+           },
+           "EX":{
+             "chassisList":"55A1,5508,5501"
+           }
+         }
+     },
+    "prodImages":{
+     "732":{
+         "ASR9K": {
+        "revs":"rev1,re2,rev3",
+        "status":"active"
+      },
+      "NCS5500": {
+        "revs":"rev1,re2,rev4,rev5",
+        "status":"active"
+      }
+       }
+    },
+    "smuDetails":{
+     "732":{
+         "ASR9K": {
+        "rev1":"CSC1234,CSC5678,CSC6739",
+        "rev2":"CSC1234,CSC5678,CSC6739",
+        "rev3":"CSC1234,CSC5678,CSC6739"
+      }
+       }
+    },
+    "opticDetails":{
+        "ASR9K":{
+            "optics":"op1,op2,op3,op4"
+        },
+        "NCS5500":{
+            "optics":"op5,op6,op7,op8"
+        }
+
+    },
+    "team":[{
+        "name":"abc",
+        "role":"",
+        "org":"marketing",
+        "CVT_POC":"true",
+        "designation":"abc designation",
+        "esc_lead":"",
+        "eng_sponser":"",
+        "cvt_mgr":""
+        },
+        {
+          "name":"abc1",
+          "role":"",
+          "org":"CVT/AT",
+          "CVT_POC":"true",
+          "designation":"abc designation",
+          "esc_lead":"",
+          "eng_sponser":"",
+          "cvt_mgr":""
+          },
+          {
+              "name":"abc2",
+              "role":"",
+              "org":"marketing",
+              "CVT_POC":"true",
+              "designation":"abc designation",
+              "esc_lead":"",
+              "eng_sponser":"",
+              "cvt_mgr":""
+              },
+              {
+                "name":"abc3",
+                "role":"",
+                "org":"cvt/at",
+                "CVT_POC":"true",
+                "designation":"abc designation",
+                "esc_lead":"",
+                "eng_sponser":"",
+                "cvt_mgr":""
+                }]
+}]

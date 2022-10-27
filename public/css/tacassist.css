@@ -1,0 +1,63 @@
+/* device page */
+.vertical-alignment-helper {
+    display:table;
+    height: 100%;
+    width: 100%;
+    pointer-events:none;
+}
+.vertical-align-center {
+    /* To center vertically */
+    display: table-cell;
+    vertical-align: middle;
+    pointer-events:none;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th {
+    /* To center vertically */
+    vertical-align: middle;
+}
+.td {
+    /* To center vertically */
+    vertical-align: middle;
+}
+.ms-container {
+    /* To center vertically */
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+}
+
+
+/* task page */
+.padding-left{
+    padding-left: 18px;
+}
+
+.model-task .model-dialog-task{
+    width: 90%;
+    overflow-y: auto;
+}
+
+.form-group {
+    box-shadow: none;
+}
+
+.help-block {
+    margin-top: 0px;
+}
+
+/* start spinner CSS */
+.glyphicon-refresh-animate {
+    -animation: spin 1.3s infinite linear;
+    -webkit-animation: spin2 1.3s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+/* end spinner CSS */
