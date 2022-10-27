@@ -1274,13 +1274,13 @@ loadBarChartOptions(){
                 <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
                 {{cfds.headline}} 
                 </a>
-                <div class="col">
-                <div class="collapse multi-collapse" id="collapseExample">
-                <div class="card card-body">
+                
+                <div class="collapse" id="collapseExample">
+                <div class="headlineBody">
                   {{cfds.headline}}
                 </div>
                 </div>
-                </div>
+                
                 </td>
 
               
