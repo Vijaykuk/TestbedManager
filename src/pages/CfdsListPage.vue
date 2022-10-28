@@ -350,10 +350,11 @@ switch(args){
     },
 
      exportCFD(e){
+      debugger;
 
        let self = this;
       let exportCFDS=[];
-      if(this.selectedCFDS== 0){
+      if(this.selectedCFDS.length === 0){
         for(let i=0;i<this.cfdDataList.length;i++){
             exportCFDS.push(this.cfdDataList[i].id)
             
@@ -484,7 +485,9 @@ switch(args){
 
           let rows = document.querySelectorAll("#myTable > tbody > tr");
         rows.forEach((row) => {
-          let cell_value=row.querySelector("td:nth-child("+col_index+")").innerHTML;
+          debugger;
+          let cell_value=row.querySelector("td:nth-child("+col_index+")").innerText.trim();
+          // =row.querySelector("td:nth-child("+col_index+")").innerHTML;
           if (col_index in unique_Colums){
 
             if(unique_Colums[col_index].includes(cell_value)){
@@ -523,6 +526,7 @@ switch(args){
     //table filter....
 
     filter_rows(e){
+      let self = this;
       debugger;
      let allFilters  =document.querySelectorAll(".table-filter");
      let filter_value_dict={}
@@ -530,13 +534,13 @@ switch(args){
       let col_index = filter_i.parentElement.getAttribute("col-index");
       if(e.currentTarget.cellIndex ==11){
         if(e.target.value =='All'){
-          this.selectedRelease ='';  
+          self.selectedRelease ='';  
         }else{
-          this.selectedRelease= e.target.value 
+          self.selectedRelease= e.target.value 
         }  
       }
       else{
-        this.selectedRelease =''; 
+        self.selectedRelease =''; 
       }
       // console.log("filter column index:"+col_index)
       let value =filter_i.value;
@@ -548,10 +552,13 @@ switch(args){
 
     let col_cell_value_dict ={};
     let rows =document.querySelectorAll("#myTable > tbody > tr");
+    self.selectedCFDS = [];
+    
     rows.forEach((row)=>{
       let display_row = true;
       allFilters.forEach((filter_i)=>{
         let col_index= filter_i.parentElement.getAttribute("col-index");
+      
         col_cell_value_dict[col_index ] = row.querySelector("td:nth-child(" +col_index+ ")").innerHTML;
       })
     
@@ -559,25 +566,26 @@ switch(args){
         let filter_value= filter_value_dict[col_i];
         let row_cell_value =col_cell_value_dict[col_i];
 
-              this.selectedCFDS = [];
-          for(let i=0;i<this.cfdDataList.length;i++){
-            this.selectedCFDS.push(this.cfdDataList[i].id)
+          //     this.selectedCFDS = [];
+          // for(let i=0;i<this.cfdDataList.length;i++){
+          //   this.selectedCFDS.push(this.cfdDataList[i].id)
             
-          }
-          let chkBoxes =document.querySelectorAll('[name="cbx_cgl"]');
-          for(let k=0;k<chkBoxes.length;k++){
-            chkBoxes[k].checked =true ;
-          }
+          // }
+          // let chkBoxes =document.querySelectorAll('[name="cbx_cgl"]');
+          // for(let k=0;k<chkBoxes.length;k++){
+          //   chkBoxes[k].checked =true ;
+          // }
         
         if(row_cell_value.indexOf(filter_value) == -1 && filter_value !="All") {
+
           display_row =false;
           break;
       }
-
       }
 
       if(display_row == true) {
         row.style.display ="table-row";
+        self.selectedCFDS.push(row.querySelector('.cfdID').innerText.trim());
      
 
           // this.selectedCFDS = [];
@@ -592,10 +600,10 @@ switch(args){
       }
       else{
         row.style.display="none";
-         let chkBoxes =document.querySelectorAll('[name="cbx_cgl"]');
-          for(let k=0;k<chkBoxes.length;k++){
-            chkBoxes[k].checked =false ;
-          }
+        //  let chkBoxes =document.querySelectorAll('[name="cbx_cgl"]');
+        //   for(let k=0;k<chkBoxes.length;k++){
+        //     chkBoxes[k].checked =false ;
+        //   }
          
       }
 
@@ -668,6 +676,11 @@ switch(args){
 
  RowClicked(e, id) {
   return router.push(`/cfds/view/${id}`);
+},
+
+getDDTShref(id){
+  return `https://cdetsng.cisco.com/summary/#/defect/`+id;
+
 },
 
 SelAll_Chks(e){
@@ -1104,8 +1117,9 @@ loadBarChartOptions(){
                   @click="SelAll_Chks($event)"
                   />
                 </th>
+             
 
-              <th col-index=2 @change="filter_rows($event)" style="width:120px">
+              <th col-index=2 @change="filter_rows($event)"  class="table-head" style="width:120px">
                 DDTS ID
                 <select class="table-filter" >
                   <option value="All"></option>
@@ -1222,6 +1236,9 @@ loadBarChartOptions(){
                   <option value="All"></option>
                 </select>
               </th>
+              <th col-index=21 style="display:none;">
+               CFD Id
+              </th>
               
              
             </tr>
@@ -1266,15 +1283,19 @@ loadBarChartOptions(){
                 </button> -->
                
               <!-- </td> -->
+              
+
               <td>
-                <a :href="`https://cdetsng.cisco.com/summary/#/defect/`+cfds.defect_id" target="_blank">
+                <a :href="getDDTShref(cfds.defect_id)" target="_blank">
                 {{cfds.defect_id}}
                 </a>
                 &nbsp;
                 </td>
+
                 <td >
-                <a data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
+                <a data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1" >
                 {{cfds.headline}} 
+                
                 </a>
                 
                 <div class="collapse" id="collapseExample1">
@@ -1295,13 +1316,13 @@ loadBarChartOptions(){
               <td>{{cfds.customer_name}}</td>
               <td>{{cfds.customer_release}}</td> 
                   <td >
-              <a data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3"> 
+              <a data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3" > 
               {{cfds.teacat}}
               </a>
                 <div class="collapse" id="collapseExample3">
                 <div class="cfdCollapse">
-                <span v-for="(teacat,ind) in getTeacat(cfds.teacat)" :key="ind" class="" >
-                <a :href="getTeactPath(teacat)" target="_blank" >
+                <span v-for="(teacat,ind) in getTeacat(cfds.teacat)" :key="ind" class=""  >
+                <a :href="getTeactPath(teacat)" target="_blank"  >
                 {{teacat}}
                 </a>
                 &nbsp;
@@ -1320,7 +1341,7 @@ loadBarChartOptions(){
                 <div class="cfdCollapse">
                 <span v-for="(sr,ind) in getsrs( cfds.service_request)" :key="ind" class="">
                 <a :href="getFilePath(sr)
-                  " target="_blank">
+                  " target="_blank" >
                 {{sr}}
                 </a>
                 &nbsp;
@@ -1333,6 +1354,11 @@ loadBarChartOptions(){
               <td>{{cfds.escape_owner}}</td>
               <td>{{cfds.escape_analysis}}</td>
               <td>{{cfds.analysis_status}}</td>
+
+              <td class="cfdID" style="display:none;">
+              
+                {{cfds.id}}
+                </td>
           
           
               </tr>
@@ -1486,18 +1512,22 @@ table a:hover, a:visited, a:link, a:active {
 .tableHead{
   margin: 0px 30px 0px 20px;
 }
-
+.table-head{
+  position: absolute;
+  left: 0;
+  top: auto;
+  
+}
 .cfdCollapse{
     color: #58585b;
     position: relative;
     background: #ffffff;
     box-shadow: none;
     border: 1px solid #dfdfdf;
-    padding: 10px 10px;
-    /* display: block; */
+    padding: 10px 8px;
+    display: block;
     border-radius: 2px;
-    /* min-height: 100px; */
-    /* word-wrap: break-word; */
+    word-wrap: break-word;
     white-space: normal
 }
 
