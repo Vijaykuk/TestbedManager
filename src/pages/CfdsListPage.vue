@@ -1174,54 +1174,56 @@ loadBarChartOptions(){
                   <option value="All"></option>
                 </select>
               </th>
-                <th col-index=13 @change="filter_rows($event)" style="width: 150px">
-                TEACAT Status
-                 <select class="table-filter">
-                  <option value="All"></option>
-                </select>
-              </th>
-               <th col-index=14 @change="filter_rows($event)" style="width: 125px">
-                CFD Phase
-                 <select class="table-filter">
-                  <option value="All"></option>
-                </select>
-              </th>
-               <th col-index=15 @change="filter_rows($event)" style="width: 155px">
-                Escape Reason
-                 <select class="table-filter">
-                  <option value="All"></option>
-                </select>
-              </th>
-               <th col-index=16 @change="filter_rows($event)" style="width: 150px">
-                Escape Owner
-                 <select class="table-filter">
-                  <option value="All"></option>
-                </select>
-              </th>
-               <th col-index=17 @change="filter_rows($event)" style="width: 160px">
-                Escape Analysis
-                 <select class="table-filter">
-                  <option value="All"></option>
-                </select>
-              </th>
-               <th col-index=18 @change="filter_rows($event)" style="width: 152px">
-                Analysis Status
-                 <select class="table-filter">
-                  <option value="All"></option>
-                </select>
-              </th>
-                 <th col-index=19 @change="filter_rows($event)" style="width:200px">
-                SRs
-                 <select class="table-filter">
-                  <option value="All"></option>
-                </select>
-              </th>
-               <th col-index=20 @change="filter_rows($event)" style="width: 220px">
+                <th col-index=13 @change="filter_rows($event)" style="width: 220px">
                 TEACAT
                  <select class="table-filter">
                   <option value="All"></option>
                 </select>
               </th>
+                <th col-index=14 @change="filter_rows($event)" style="width: 150px">
+                TEACAT Status
+                 <select class="table-filter">
+                  <option value="All"></option>
+                </select>
+              </th>
+                 <th col-index=15 @change="filter_rows($event)" style="width:200px">
+                SRs
+                 <select class="table-filter">
+                  <option value="All"></option>
+                </select>
+              </th>
+               <th col-index=16 @change="filter_rows($event)" style="width: 125px">
+                CFD Phase
+                 <select class="table-filter">
+                  <option value="All"></option>
+                </select>
+              </th>
+               <th col-index=17 @change="filter_rows($event)" style="width: 155px">
+                Escape Reason
+                 <select class="table-filter">
+                  <option value="All"></option>
+                </select>
+              </th>
+               <th col-index=18 @change="filter_rows($event)" style="width: 150px">
+                Escape Owner
+                 <select class="table-filter">
+                  <option value="All"></option>
+                </select>
+              </th>
+               <th col-index=19 @change="filter_rows($event)" style="width: 160px">
+                Escape Analysis
+                 <select class="table-filter">
+                  <option value="All"></option>
+                </select>
+              </th>
+               <th col-index=20 @change="filter_rows($event)" style="width: 152px">
+                Analysis Status
+                 <select class="table-filter">
+                  <option value="All"></option>
+                </select>
+              </th>
+              
+             
             </tr>
           </thead>
 
@@ -1271,16 +1273,15 @@ loadBarChartOptions(){
                 &nbsp;
                 </td>
                 <td >
-                <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                <a data-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
                 {{cfds.headline}} 
                 </a>
                 
-                <div class="collapse" id="collapseExample">
-                <div class="headlineBody">
+                <div class="collapse" id="collapseExample1">
+                <div class="cfdCollapse">
                   {{cfds.headline}}
                 </div>
                 </div>
-                
                 </td>
 
               
@@ -1293,13 +1294,30 @@ loadBarChartOptions(){
               <td>{{cfds.original_found}}</td>
               <td>{{cfds.customer_name}}</td>
               <td>{{cfds.customer_release}}</td> 
+                  <td >
+              <a data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3"> 
+              {{cfds.teacat}}
+              </a>
+                <div class="collapse" id="collapseExample3">
+                <div class="cfdCollapse">
+                <span v-for="(teacat,ind) in getTeacat(cfds.teacat)" :key="ind" class="" >
+                <a :href="getTeactPath(teacat)" target="_blank" >
+                {{teacat}}
+                </a>
+                &nbsp;
+                </span>
+                </div>
+                </div>
+
+                </td>
               <td>{{cfds.teacat_status}}</td>
-              <td>{{cfds.cfd_phase}}</td>
-              <td>{{cfds.escape_reason}}</td>
-              <td>{{cfds.escape_owner}}</td>
-              <td>{{cfds.escape_analysis}}</td>
-              <td>{{cfds.analysis_status}}</td>
-              <td >
+                  <td >
+                <a data-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2"> 
+              {{cfds.service_request}}
+              </a>
+
+                <div class="collapse" id="collapseExample2">
+                <div class="cfdCollapse">
                 <span v-for="(sr,ind) in getsrs( cfds.service_request)" :key="ind" class="">
                 <a :href="getFilePath(sr)
                   " target="_blank">
@@ -1307,15 +1325,16 @@ loadBarChartOptions(){
                 </a>
                 &nbsp;
                   </span> 
+                   </div>
+                </div>
               </td>
-              <td>
-                <span v-for="(teacat,ind) in getTeacat(cfds.teacat)" :key="ind" class="">
-                <a :href="getTeactPath(teacat)" target="_blank">
-                {{teacat}}
-                </a>
-                &nbsp;
-                </span>
-                </td>
+              <td>{{cfds.cfd_phase}}</td>
+              <td>{{cfds.escape_reason}}</td>
+              <td>{{cfds.escape_owner}}</td>
+              <td>{{cfds.escape_analysis}}</td>
+              <td>{{cfds.analysis_status}}</td>
+          
+          
               </tr>
           </tbody>
         </table>
@@ -1466,6 +1485,20 @@ table a:hover, a:visited, a:link, a:active {
 } 
 .tableHead{
   margin: 0px 30px 0px 20px;
+}
+
+.cfdCollapse{
+    color: #58585b;
+    position: relative;
+    background: #ffffff;
+    box-shadow: none;
+    border: 1px solid #dfdfdf;
+    padding: 10px 10px;
+    /* display: block; */
+    border-radius: 2px;
+    /* min-height: 100px; */
+    /* word-wrap: break-word; */
+    white-space: normal
 }
 
 </style>

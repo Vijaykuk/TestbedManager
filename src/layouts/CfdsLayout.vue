@@ -38,7 +38,7 @@ export default {
 </script>
 
 <template>
-<div class="container" style="overflow-y:scroll">  
+<div class="container" style="overflow-y:scroll; height:100vh">  
   <header id="rackHeader" class="header header--compressed">
     <nav>
     <div class="header-bar container rackHeaderBar">
